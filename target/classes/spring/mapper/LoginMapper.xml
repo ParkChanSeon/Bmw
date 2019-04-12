@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bmw.LoginMapper">
+
+
+
+<!-- 로그인 -->
+<select id ="selectUserById" resultType="member" >
+	
+            SELECT
+                *
+            FROM
+                member
+            WHERE
+                member_id=#{ member_id}
+       
+
+
+	</select>
+	
+<!--  비밀번호 입력 실패시 실패 컬럼 업데이트-->	
+	<update id="updateFailureCount">
+		
+			UPDATE
+				member
+			SET
+				FAILURE_CNT = FAILURE_CNT + 1
+			WHERE
+				member_id = #{ member_id}
+	
+	</update>
+	
+	
+	
+<!-- 로그인 실패 횟수 조회 -->	
+	<select id="checkFailureCount" resultType="Integer">
+		
+			SELECT
+				FAILURE_CNT
+			FROM
+				member
+			WHERE
+				member_id=#{ member_id}
+		
+	</select>
+	
+	
+<!-- 로그인 실패시 계정 잠금 -->
+
+<update id="updateUnenabled">
+		
+			UPDATE
+				member
+			SET
+				ENABLED = false
+			WHERE
+				member_id = #{ member_id}
+		
+	</update>
+	
+	
+<!-- 로그인 실패 횟수 초기화 -->
+<update id="updateFailureCountReset">
+		
+			UPDATE
+				member
+			SET
+				FAILURE_CNT = 0
+			WHERE
+				member_id = #{ member_id}
+		
+	</update>	
+
+
+	
+</mapper>
