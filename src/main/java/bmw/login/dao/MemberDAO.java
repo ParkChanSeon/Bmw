@@ -18,9 +18,9 @@ public class MemberDAO {
 		this.sqlSession = sqlSession;
 	}
 	
-	public Member getUserById(String username) {
+	public Member getUserById(String member_id) {
 			
-		return sqlSession.selectOne(strNameSpace + ".selectUserById", username);
+		return sqlSession.selectOne(strNameSpace + ".selectUserById", member_id);
 	}
 	
 	public void updateDisabled(String username) {
@@ -47,6 +47,9 @@ public class MemberDAO {
 		sqlSession.update(strNameSpace + ".updateAccessDate", username);
 	}
 
+	public int join(Member member) {
+		return sqlSession.insert(strNameSpace + ".join", member);  
+	}
 	
 	
 	

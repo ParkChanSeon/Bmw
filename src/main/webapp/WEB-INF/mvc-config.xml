@@ -38,6 +38,7 @@
 	<context:component-scan base-package="bmw.login.controller"/>
 	<context:component-scan base-package="bmw.login.dao"/>
 	<context:component-scan base-package="bmw.login.service"/>
+	<context:component-scan base-package="bmw.model"/>
 	
 	
 

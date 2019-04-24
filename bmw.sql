@@ -11,25 +11,14 @@ CREATE TABLE MEMBER(
 member_id varchar(50) not null primary key,
 member_pw varchar(20) not null,
 member_name varchar(30) not null,
-member_birth datetime not null,
+member_birth date not null,
 member_gender varchar(10) not null,
 member_phone varchar(15) not null,
 member_image varchar(300) null,
 member_regDate datetime not null,
-AUTHORITY varchar(50) NOT NULL DEFAULT 'ROLE_MEMBER',
+AUTHORITY varchar(50) NOT NULL DEFAULT 'ROLE_USER',
 ENABLED tinyint(1) unsigned zerofill DEFAULT '1',
 FAILURE_CNT int not null DEFAULT 0
-);
-
-
-
-
-CREATE TABLE MEMBER(
-member_id varchar(50) not null primary key,
-member_pw varchar(20) not null,
-member_name varchar(30) not null,
-AUTHORITY varchar(50) NOT NULL DEFAULT 'ROLE_MEMBER',
-ENABLED tinyint(1) unsigned zerofill DEFAULT '1'
 );
 
 

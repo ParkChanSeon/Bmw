@@ -8,8 +8,10 @@ import java.util.Date;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Repository;
 
 @SuppressWarnings("serial")
+@Repository
 public class Member implements UserDetails {
 
 	private String member_id;

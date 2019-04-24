@@ -39,7 +39,7 @@
 				<div id = "member_prifile_div">
 				
 				
-				<img id = "member_profile_img" src="${pageContext.request.contextPath}/resources/images/설현.gif">
+				<img id = "member_profile_img" src="${pageContext.request.contextPath}${loginMember.member_image}">
 				
 				<p><span class = "member_id_span"><b>${loginMember.member_id}</b></span></p>
 				<p><span class = "member_id_span">${loginMember.member_name}</span></p>

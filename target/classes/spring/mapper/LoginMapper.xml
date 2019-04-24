@@ -74,6 +74,17 @@
 		
 	</update>	
 
+<!-- 회원가입 -->
+<insert id = "join" parameterType="member">
 
+	INSERT INTO member (
+	member_id, member_pw, member_name, member_birth, 
+	member_gender, member_phone, member_image, member_regDate)
+	VALUES(
+	#{member_id}, #{member_pw},#{member_name},#{member_birth},#{member_gender},
+	#{member_phone},#{member_image},now()
+	)
+
+</insert>
 	
 </mapper>
